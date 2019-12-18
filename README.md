@@ -10,7 +10,7 @@ Intro to GCP Cloud run with Python.
 Run command to get the project id :
 `gcloud config get-value project`
 
-## Command to Deploying the inmage to Cloud Run
+## Command for Deploying the image to Cloud Run
 `gcloud run deploy --image gcr.io/{Replace-with-Project-Id}/py-hello-world --platform managed`
 
 Note: If not already selected the you might get an CLI alert to select an region & others as:
@@ -23,5 +23,5 @@ Run command: `gcloud builds submit`
 
 Should Trigger the cloud build & we can retrieve the endpoint exposed by the Cloud Run deployment.
 
-Note: In order to access the API from browser you can grant access in google console by:
-      Cloud Run > py-hello-world > PERMISSIONS > +ADD > allUsers
+Note: In order to access (For test purpose only) the API from browser you can grant access in google console by:
+      Cloud Run > py-hello-world > PERMISSIONS > +ADD > allUsers (Select Member) > Cloud Run - Cloud Run Invoker
