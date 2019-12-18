@@ -1,36 +1,24 @@
 steps:
-  - name: "gcr.io/cloud-builders/go"
-    args: ["get", "-d", "-v", "./..."]
-    # env: ["PROJECT_ROOT=bitbucket.org/gcp-intro-t0-cloudrun"]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/py-hello-world', '.']
 
-  - name: "gcr.io/cloud-builders/go"
-    args: ["install"]
-    # env: ["PROJECT_ROOT=bitbucket.org/gcp-intro-t0-cloudrun"]
-
-  - name: "gcr.io/cloud-builders/go"
-    args: ["test"]
-    # env: ["PROJECT_ROOT=bitbucket.org/gcp-intro-t0-cloudrun"]
-
-  # build the container image
   - name: "gcr.io/cloud-builders/docker"
-    args: ["build", "-t", "gcr.io/$PROJECT_ID/gcp-intro-t0-cloudrun", "."]
-    # push the container image to Container Registry
-  - name: "gcr.io/cloud-builders/docker"
-    args: ["push", "gcr.io/$PROJECT_ID/gcp-intro-t0-cloudrun"]
-    # Deploy container image to Cloud Run
+    args: ["push", "gcr.io/$PROJECT_ID/py-hello-world"]
+
+  - name: 'gcr.io/$PROJECT_ID/py-hello-world'
+    args: ['pytest']
+
   - name: "gcr.io/cloud-builders/gcloud"
     args:
       [
         "beta",
         "run",
         "deploy",
-        "gcp-intro-t0-cloudrun",
+        "py-hello-world",
         "--image",
-        "gcr.io/$PROJECT_ID/gcp-intro-t0-cloudrun",
+        "gcr.io/$PROJECT_ID/py-hello-world",
         "--region",
         "europe-west1",
         "--platform",
         "managed",
       ]
-images:
-  - gcr.io/$PROJECT_ID/gcp-intro-t0-cloudrun
