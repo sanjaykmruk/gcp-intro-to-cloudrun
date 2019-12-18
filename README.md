@@ -25,4 +25,3 @@ Should Trigger the cloud build & we can retrieve the endpoint exposed by the Clo
 
 Note: In order to access the API from browser you can grant access in google console by:
       Cloud Run > py-hello-world > PERMISSIONS > +ADD > allUsers
-
