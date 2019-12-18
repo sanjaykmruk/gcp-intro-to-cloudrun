@@ -1,5 +1,5 @@
-.git
-.gitignore
-.pytest_cache
 README.md
-docker*
+*.pyc
+*.pyo
+*.pyd
+__pycache__
