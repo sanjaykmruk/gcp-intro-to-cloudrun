@@ -1,7 +1,7 @@
 # gcp-intro-to-cloudrun
 Intro to GCP Cloud run with Python.
 
-# 1. Manual Creating a image and deploying it to Cloud Run
+# 1. Manually Creating a image and deploying it to Cloud Run
 ## Command to create a docker image in Google Registry
 `gcloud builds submit --tag gcr.io/{Replace-with-Project-Id}/py-hello-world`
 
