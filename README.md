@@ -3,17 +3,13 @@
 This Python project is used for creating and deploying a Cloud Run Service using Cloud Build and Container Registry.
 
 ### Note:
-* Before we begin ensure Cloud Build, Container Registry and Cloud Run services are enabled and you have the right privileges.
+* Before we begin ensure that you Google SDK Installed and configured, Cloud Build, Container Registry and Cloud Run services are enabled and you have the right privileges.
 * The square brackets should be replaced with appropriate values.
 * Run below command to get the project Id:
 
 ``` bash
 gcloud config get-value project
 ```
-
-and export this value (MAC):
-
-`export PROJECT_ID=[PROJECT_ID]`
 
 ## 1. Cloud Build through CLI
 
