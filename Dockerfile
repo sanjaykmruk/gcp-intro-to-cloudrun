@@ -6,4 +6,4 @@ COPY . ./
 
 RUN pip install Flask gunicorn pytest
 
-CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 app:app
+CMD python app.py
