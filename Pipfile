@@ -10,3 +10,7 @@ flask = "*"
 pytest = "*"
 pycodestyle = "*"
 pylint = "*"
+black = "*"
+
+[pipenv]
+allow_prereleases = true
